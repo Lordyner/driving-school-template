@@ -1,0 +1,135 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: center;
+    background-color: var(--black);
+}
+
+a.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    color: #ddd;
+    font-size: var(--heading-400);
+}
+
+.navLink {
+    display: flex;
+    gap: 2rem;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.title {
+    color: #000000;
+    font-weight: 600;
+}
+
+.title:hover {
+    color: var(--primary-color);
+    transition: .1s ease-in-out;
+}
+
+
+
+.hamburger {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+}
+
+.burger {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 5px;
+    background-color: #fff;
+    transform-origin: 1px;
+    transition: all .3s linear;
+}
+
+
+.sideMenu.active {
+    right: 0;
+    transition: right .2s ease-in-out;
+}
+
+
+.logo:hover {
+    color: var(--primary-color) !important;
+
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+}
+
+.site-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.burger img {
+    opacity: .8;
+}
+
+.profilImg {
+    border-radius: 90px;
+    width: 50px;
+    height: 50px;
+    transition: 0.1s ease-in-out;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.sideMenu {
+    height: 100%;
+    width: 55%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: -3000px;
+    background-color: #fff;
+    padding-top: 2rem;
+    transition: right .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    font-size: var(--body-500);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+
+.sideMenu a {
+    font-size: 1.25rem;
+    color: var(--black);
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: 2rem 2.5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .navLink {
+        gap: 4rem;
+    }
+}
