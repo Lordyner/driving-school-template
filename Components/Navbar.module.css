@@ -39,11 +39,67 @@ a.link {
 
 
 .hamburger {
+    position: relative;
+    display: block;
     width: 2rem;
-    height: 2rem;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10rem;
+    background-color: var(--black);
+    margin: 6px 0;
+    transition: .4s;
+}
+
+.hamburger.isActive:before {
+    transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+.hamburger.isActive .bar {
+    opacity: 0;
+}
+
+.hamburger.isActive:after {
+    transform: rotate(45deg) translate(-7px, -8px);
+}
+
+.mobileNav {
+    height: 100vh;
+    width: 55%;
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    right: -100%;
+    background-color: white;
     display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 8rem 2rem;
+    font-size: var(--body-500);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: .5s ease-in-out;
+}
+
+.mobileNav.active {
+    right: 0;
+}
+
+.mobileLink {
+    color: var(--black);
+    font-family: IBMSemibold;
+    font-weight: var(--body-500);
 }
 
 .burger {

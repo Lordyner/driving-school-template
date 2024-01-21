@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import logoTemplate from '@/public/images/logo_template.png';
-import iconMenuClose from '@/public/images/icon_menu_close.svg';
 import Image from 'next/image';
 import classes from './Navbar.module.css'
 import GlobalContext from '@/Store/GlobalContext';
@@ -8,9 +7,10 @@ import Link from 'next/link';
 
 
 const Navbar = () => {
-
+    const burger = useRef();
     const { isMobileResolution } = useContext(GlobalContext);
     const { isMenuOpen, setIsMenuOpen } = useContext(GlobalContext);
+    const { toggleMenu } = useContext(GlobalContext);
     return (
         <nav className={classes.navbar}>
             <div className={classes.logo}>
@@ -27,22 +27,32 @@ const Navbar = () => {
             </div>
 
             {/* Burger menu */}
-            <div className={`${isMobileResolution ? classes.hamburger : classes.hamburger + " display-none"}`}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <div className={`${classes.burger} burger1`} />
-                <div className={`${classes.burger} burger2`} />
-                <div className={`${classes.burger} burger3`} />
-            </div>
-            {/* Side menu */}
-            <div id="sideMenu" className={`${classes.sideMenu} ${isMenuOpen ? classes.active : ""}`}>
-                <div className='d-flex justify-content-end mb-4'>
-                    <Image src={iconMenuClose} alt='icône de fermeture du menu' id='close-menu-icon' onClick={() => setIsMenuOpen(!isMenuOpen)} />
-                </div>
-                <Link href="" onClick={() => setIsMenuOpen(!isMenuOpen)}>Lien 1</Link>
-                <Link href="" onClick={() => setIsMenuOpen(!isMenuOpen)}>Lien 2</Link>
-                <Link href="" onClick={() => setIsMenuOpen(!isMenuOpen)}>Lien 3</Link>
+            <div ref={burger} className={`${isMobileResolution ? classes.hamburger : classes.hamburger + " display-none"}`}
+                onClick={() => {
+                    toggleMenu();
+                    burger.current.classList.toggle(classes.isActive);
+
+                }}>
+                <div className={classes.bar} />
             </div>
 
+            {/* Mobile menu */}
+            <div className={`${classes.mobileNav} ${isMenuOpen ? classes.active : ""}`}>
+                <Link href="" className={classes.mobileLink} onClick={() => {
+                    toggleMenu();
+                    burger.current.classList.toggle(classes.isActive);
+                }}>Lien 1</Link>
+
+                <Link href="" className={classes.mobileLink} onClick={() => {
+                    toggleMenu();
+                    burger.current.classList.toggle(classes.isActive);
+                }}>Lien 2</Link>
+
+                <Link href="" className={classes.mobileLink} onClick={() => {
+                    toggleMenu();
+                    burger.current.classList.toggle(classes.isActive);
+                }}>Lien 3</Link>
+            </div>
         </nav >
     );
 };
