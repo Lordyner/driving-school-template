@@ -1,6 +1,8 @@
 :root {
     /* Colors */
-    --primary-color: #837BD1;
+    --primary-color: #f5e3b5;
+    --secondary-color: #CFECF5;
+    --tertiary-color: #F2C7C6;
     --darker-primary-color: #150147;
     --lighter-primary-color: hsl(246, 48%, 65%, 30%);
     --primary-background-color: #ffffff;
@@ -18,7 +20,7 @@
     --mobile: 375px;
 
     /* Fonts */
-    --heading-900: 2rem;
+    --heading-900: 2.5rem;
     --heading-600: 1.75rem;
     --heading-500: 1.25rem;
     --body-500: 1rem;
@@ -61,13 +63,18 @@
 
 
 @font-face {
-    font-family: LatoRegular;
-    src: url('../public/fonts/static/Lato/Lato-Regular.ttf');
+    font-family: IBMRegular;
+    src: url('../public/fonts/static/IBM_Plex_Sans_Hebrew/IBMPlexSansHebrew-Regular.ttf');
 }
 
 @font-face {
-    font-family: LatoBold;
-    src: url('../public/fonts/static/Lato/Lato-Bold.ttf');
+    font-family: IBMSemiBold;
+    src: url('../public/fonts/static/IBM_Plex_Sans_Hebrew/IBMPlexSansHebrew-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: IBMBold;
+    src: url('../public/fonts/static/IBM_Plex_Sans_Hebrew/IBMPlexSansHebrew-Bold.ttf');
 }
 
 
@@ -75,7 +82,7 @@
     margin: 0;
     padding: 0;
     /* box-sizing: inherit; */
-    font-family: LatoRegular;
+    font-family: IBMRegular;
 }
 
 html {
@@ -160,6 +167,48 @@ body {
     gap: .5rem
 }
 
+.underline {
+    font-family: IBMSemiBold;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 90%;
+    right: 7px;
+    height: 4px;
+    border-radius: 10px;
+    background: linear-gradient(111.3deg, #CFECF5 9.6%, #F2C7C6 93.6%);
+
+}
+
+
+.icon-play {
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon-play::before {
+    content: "";
+    font-size: var(--body-500);
+    background-image: url('../public/images/icon_play.svg');
+    width: 1.25em;
+    height: 1.25em;
+    position: absolute;
+    background-size: 1.25em;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.pink-color {
+    text-decoration-color: var(--tertiary-color);
+}
+
+.blue-color {
+    text-decoration-color: var(--secondary-color);
+}
+
 /* STYLE */
 
 
@@ -167,11 +216,25 @@ body {
 
 h1 {
     font-size: var(--heading-900);
-    font-family: LatoBold;
+    font-family: IBMSemiBold;
     font-weight: 900;
     text-transform: uppercase;
     font-weight: normal;
+    position: relative;
+    max-width: min-content;
 }
+
+h1:before {
+    position: absolute;
+    border-radius: 15px;
+    left: 0;
+    top: 1.2em;
+    height: 0;
+    width: 50px;
+    content: '';
+    border-top: 4px solid var(--primary-color);
+}
+
 
 h2 {
     font-size: var(--heading-600);
@@ -218,21 +281,17 @@ button {
     color: inherit;
     background-color: transparent;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 10rem;
 }
 
 .primary-button {
-
+    font-family: IBMSemiBold;
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--black);
     padding: .75em 1.5em;
-    border-radius: 10rem;
     font-size: var(--body-500);
     transition: 0.2s ease-in-out;
-    text-transform: uppercase;
-    font-family: Lato;
-    /* box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .15); */
-
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .primary-call-to-action {
@@ -244,7 +303,6 @@ button {
     font-size: var(--body-500);
     transition: 0.2s ease-in-out;
     text-transform: uppercase;
-    font-family: Lato;
     font-weight: 700;
     /* box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .15); */
 
@@ -270,11 +328,17 @@ button {
 
 
 .secondary-button {
+    font-size: var(--body-500);
     background-color: #fff;
-    border: 1px solid var(--black);
-    padding: .5em 1.5em;
-    border-radius: 10px;
+    padding: 0.5em 1em;
+    position: relative;
+    display: flex;
+    align-items: end;
+    gap: .5em;
+    text-decoration: underline;
 }
+
+
 
 .dark-filter {
     background-color: rgba(0, 0, 0, 23%);
@@ -576,4 +640,72 @@ section {
     .secondary-button {
         padding: 0.5em 2em
     }
+}
+
+/* Burger menu js */
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+    background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    background: #bdc3c7;
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+    display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
 }

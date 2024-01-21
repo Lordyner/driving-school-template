@@ -5,6 +5,8 @@ import Image from 'next/image';
 import classes from './Navbar.module.css'
 import GlobalContext from '@/Store/GlobalContext';
 import Link from 'next/link';
+
+
 const Navbar = () => {
 
     const { isMobileResolution } = useContext(GlobalContext);
@@ -40,6 +42,7 @@ const Navbar = () => {
                 <Link href="" onClick={() => setIsMenuOpen(!isMenuOpen)}>Lien 2</Link>
                 <Link href="" onClick={() => setIsMenuOpen(!isMenuOpen)}>Lien 3</Link>
             </div>
+
         </nav >
     );
 };

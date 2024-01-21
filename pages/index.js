@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Homepage from '@/Components/Homepage'
 import { useContext, useEffect, useState } from 'react'
 import GlobalContext from '@/Store/GlobalContext'
 import { getLogger } from '@/Logging/log-util'
 import { useRouter } from 'next/router'
+import Hero from '@/Components/Hero'
+import Navbar from '@/Components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -62,9 +63,10 @@ export default function Home({ reviews }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isMenuOpen && <div className='overlay-burger-menu'></div>}
+
       <main className='main-container'>
-        <Homepage />
+        <Navbar />
+        <Hero />
         {/* <Reviews reviews={reviews} /> */}
       </main>
     </>
