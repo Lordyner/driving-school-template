@@ -10,7 +10,7 @@ const Hero = () => {
     const { isMobileResolution } = useContext(GlobalContext);
     return (
         <section id="hero" className={classes.heroContainer}>
-            <h1>Apprendre<br /> à bien <span className='underline'>conduire</span></h1>
+            <h1>Apprendre<br /> à bien <span className='underline gradient'>conduire</span></h1>
             <div className={classes.callToActionWrapper}>
                 <button className='primary-button'>S&apos;inscrire</button>
                 <button className='secondary-button'>

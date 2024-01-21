@@ -143,6 +143,11 @@ body {
     justify-content: center;
 }
 
+.align-items-end {
+    align-items: flex-end;
+
+}
+
 .flex-grow-2 {
     flex-grow: 2;
 }
@@ -168,6 +173,7 @@ body {
 }
 
 .underline {
+    position: relative;
     font-family: IBMSemiBold;
 }
 
@@ -175,12 +181,18 @@ body {
     content: "";
     position: absolute;
     top: 100%;
-    width: 90%;
-    right: 7px;
+    width: 100%;
+    right: 0;
     height: 4px;
     border-radius: 10px;
-    background: linear-gradient(111.3deg, #CFECF5 9.6%, #F2C7C6 93.6%);
+}
 
+.underline.gradient::after {
+    background: linear-gradient(111.3deg, #CFECF5 9.6%, #F2C7C6 93.6%);
+}
+
+.underline.primary-color::after {
+    background: var(--primary-color);
 }
 
 .overflow-y-hidden {
@@ -244,7 +256,10 @@ h1:before {
 h2 {
     font-size: var(--heading-600);
     color: var(--black);
+    font-family: IBMSemiBold;
+    position: relative;
 }
+
 
 h3 {
     font-size: var(--heading-500);

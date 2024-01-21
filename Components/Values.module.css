@@ -1,0 +1,85 @@
+.valueSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+.valueContent.fromRight {
+    align-self: flex-end;
+}
+
+.title {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    font-weight: 900;
+    position: absolute;
+    /* color: white; */
+    /* fill: white; */
+    right: 5rem;
+    bottom: -2rem;
+}
+
+.valueContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: var(--secondary-color);
+    padding: 4rem 2rem;
+    width: 70%;
+}
+
+.valueContent.fromLeft {
+    box-shadow: 19px 11px 18px -15px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 6rem;
+    border-bottom-right-radius: 6rem;
+}
+
+.valueContent.fromRight {
+    box-shadow: -19px 11px 18px -15px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 6rem;
+    border-bottom-left-radius: 6rem;
+}
+
+.valueText {
+    max-width: 80%;
+}
+
+
+.value:nth-child(even) {
+    text-align: right;
+}
+
+.valueContent.primaryColor {
+    background-color: var(--primary-color);
+}
+
+.valueContent.secondaryColor {
+    background-color: var(--secondary-color);
+}
+
+.valueContent.tertiaryColor {
+    background-color: var(--tertiary-color);
+
+}
+
+.valueImg {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
+    max-height: 16rem;
+}
