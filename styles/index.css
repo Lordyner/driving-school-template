@@ -185,6 +185,7 @@ body {
     right: 0;
     height: 4px;
     border-radius: 10px;
+    background: var(--primary-color);
 }
 
 .underline.gradient::after {
@@ -470,7 +471,7 @@ a {
 }
 
 section {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     min-height: 100svh;
 }
 
