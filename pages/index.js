@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import Hero from '@/Components/Hero'
 import Navbar from '@/Components/Navbar'
 import Values from '@/Components/Values'
+import Reviews from '@/Components/Reviews'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -68,36 +69,34 @@ export default function Home({ reviews }) {
       <main className='main-container'>
         <Navbar />
         <Hero />
-        {/* <Reviews reviews={reviews} /> */}
       </main>
       <Values />
+      <Reviews reviews={reviews} />
     </>
   )
 }
 
-// export async function getStaticProps(context) {
-//   // Fetch reviews for a place id and with a googe API key
-//   const logger = getLogger('Reviews');
-//   logger.info('Method fetching reviews');
-//   let fetchedReviews = null;
-//   let response = null;
+export async function getStaticProps(context) {
+  // Fetch reviews for a place id and with a googe API key
+  const logger = getLogger('Reviews');
+  logger.info('Method fetching reviews');
+  let fetchedReviews = null;
+  let response = null;
 
-//   try {
-//     response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&key=${process.env.PLACE_API_KEY}&language=fr`);
-//     const data = await response.json();
-//     fetchedReviews = data.result.reviews;
-//     logger.info("Reviews fetched successfully");
-//   } catch (error) {
-//     logger.error("Error while fetching reviews : " + JSON.stringify(error));
-//   }
+  try {
+    response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&key=${process.env.PLACE_API_KEY}&language=fr`);
+    const data = await response.json();
+    fetchedReviews = data.result.reviews;
+    logger.info("Reviews fetched successfully");
+  } catch (error) {
+    logger.error("Error while fetching reviews : " + JSON.stringify(error));
+  }
 
-//   return {
-//     props: {
-//       reviews: fetchedReviews,
-//     },
-//     // Revalidate data every day
-//     revalidate: 86400,
-//   };
-
-
-// }
+  return {
+    props: {
+      reviews: fetchedReviews,
+    },
+    // Revalidate data every day
+    revalidate: 86400,
+  };
+}

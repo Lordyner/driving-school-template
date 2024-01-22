@@ -1,0 +1,27 @@
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #2A4F6E;
+    color: #fff;
+    border-radius: 3rem 3rem 3rem 0;
+    padding: 2rem;
+    min-width: 50%;
+    box-shadow: 19px 16px 8px -7px rgba(0, 0, 0, 0.1);
+}
+
+.review:nth-child(even) {
+    background-color: #914847;
+}
+
+.reviewAuthorAndNote {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.stars {
+    display: flex;
+    justify-content: flex-end;
+    color: #FABB05;
+}
