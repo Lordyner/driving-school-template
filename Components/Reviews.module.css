@@ -3,8 +3,8 @@
     flex-direction: row;
     overflow-x: scroll;
     gap: 2rem;
-    padding: 2rem 0;
-    align-items: center;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
     border-radius: 2rem;
 
 }
@@ -13,6 +13,7 @@
 .reviewSection {
     /* background-color: #2a4f6e3d; */
     padding: 3rem 0 2rem 1rem;
+    min-height: auto;
 }
 
 .reviewSection h2 {

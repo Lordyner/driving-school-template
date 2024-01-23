@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { getLogger } from '../Logging/log-util';
 import classes from './Contact.module.css';
 import GlobalContext from '@/Store/GlobalContext';
+import Link from 'next/link';
 
 const Contact = () => {
     const logger = getLogger('Contact');
@@ -62,20 +63,38 @@ const Contact = () => {
     }
 
     return (
-        <section>
-            <h2>CONTACT</h2>
-            <form ref={form} onSubmit={sendEmail} id={classes.contactForm}>
-                <div className={classes.formHeader}>
-                    <input type="text" name="user_name" placeholder="NOM" required></input>
-                    <input type="email" name="user_mail" placeholder="MAIL" required></input>
-                </div>
-                <div className={classes.formBody}>
-                    <textarea name="message" placeholder="MESSAGE" required></textarea>
-                </div>
-                <div className={classes.formFooter}>
-                    <button className="primary-button" disabled={isDisabled}>ENVOYEZ</button>
-                </div>
-            </form>
+        <section className={classes.contactSection}>
+            <div className={classes.formWrapper}>
+                <h2>Nous contacter</h2>
+                <form ref={form} className={classes.form}>
+                    <div className={classes.fieldsWrapper}>
+                        <div className={classes.formGroup}>
+                            <label htmlFor='name'>Nom</label>
+                            <input type='text' name='name' id='name' placeholder='Nom' required></input>
+                        </div>
+                        <div className={classes.formGroup}>
+                            <label htmlFor='firstName'>Prénom</label>
+                            <input type='text' name='firstName' id='firstName' placeholder='Prénom' required></input>
+                        </div>
+                        <div className={classes.formGroup}>
+                            <label htmlFor='mail'>Mail</label>
+                            <input type='email' name='mail' id='mail' placeholder='Adresse mail' pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required></input>
+                        </div>
+                        <div className={classes.formGroup}>
+                            <label htmlFor='tel'>Téléphone</label>
+                            <input type='text' name='tel' id='tel' placeholder='Téléphone' pattern="[0-9]+" required></input>
+                        </div>
+                        <div className={classes.formGroup}>
+                            <label htmlFor='message'>Message</label>
+                            <textarea type='textarea' id='message' name='message' placeholder='Message' rows={8} required></textarea>
+                        </div>
+                    </div>
+
+                    <div className={classes.buttonWrapper}>
+                        <button className='primary-button' type='submit'>Confirmer</button>
+                    </div>
+                </form>
+            </div >
         </section>
     );
 };

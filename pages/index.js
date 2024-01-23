@@ -8,6 +8,8 @@ import Hero from '@/Components/Hero'
 import Navbar from '@/Components/Navbar'
 import Values from '@/Components/Values'
 import Reviews from '@/Components/Reviews'
+import Contact from '@/Components/Contact'
+import CTAReminder from '@/Components/CTAReminder'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -72,6 +74,8 @@ export default function Home({ reviews }) {
       </main>
       <Values />
       <Reviews reviews={reviews} />
+      <CTAReminder />
+      <Contact />
     </>
   )
 }
