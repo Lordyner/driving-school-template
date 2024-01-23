@@ -15,17 +15,19 @@ const Footer = () => {
                 {isMobileResolution &&
                     <div className={classes.valueProposition}>
 
-                        <Image src={logoTemplate} alt='développeur thomas andré-lubin' className={classes.profilImg} width={50} height={50} />
+                        <Image src={logoTemplate} alt='logo auto-école' className={classes.profilImg} width={50} height={50} />
                         <div>
-                            <h2>Thomas André-Lubin</h2>
-                            <p>Value proposition qui fait des trucs</p>
+                            <h2>Nom auto-école</h2>
+                            <p>Value proposition auto-école</p>
+                            <p>Ligne d&apos;adresse numéro 1</p>
+                            <p>02 41 75 95 96</p>
                         </div>
                     </div>
                 }
                 {!isMobileResolution &&
                     <div className={classes.valueProposition}>
                         <div className={classes.imageAndNameContainer}>
-                            <Image src={logoTemplate} alt='développeur thomas andré-lubin' className={classes.profilImg} width={50} height={50} />
+                            <Image src={logoTemplate} alt='logo auto-école' className={classes.profilImg} width={50} height={50} />
                             <h2>Thomas André-Lubin</h2>
                         </div>
                         <p>Développement de site web sur mesure.</p>
@@ -36,9 +38,22 @@ const Footer = () => {
                 <div className={classes.linkContainer}>
                     <div className={classes.topLinks}>
                         <div className={classes.classicLinks}>
-                            <Link href="/#home">Accueil</Link>
-                            <a href="/CV-andrelubin-thomas.pdf">Curriculum Vitae</a>
-                            <Link href="/#projects-section">Projets</Link>
+                            <Link href="/#home">Lien 1</Link>
+                            <Link href="/#home">Lien 2</Link>
+                            <Link href="/#home">Lien 3</Link>
+                            <Link href="/#home">Lien 4</Link>
+                            <Link href="/#home">Lien 5</Link>
+
+                        </div>
+                    </div>
+                    <div className={classes.topLinks}>
+                        <div className={classes.classicLinks}>
+                            <Link href="/#home">Lien 6</Link>
+                            <Link href="/#home">Lien 7</Link>
+                            <Link href="/#home">Lien 8</Link>
+                            <Link href="/#home">Lien 9</Link>
+                            <Link href="/#home">Lien 10</Link>
+
                         </div>
                     </div>
                     <div className={classes.socialLinks}>
