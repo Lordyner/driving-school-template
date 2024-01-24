@@ -2,10 +2,10 @@
     display: grid;
     grid-template-columns: 1fr;
     padding: 2rem 0;
-    background-color: var(--secondary-color);
-    border-radius: 2rem;
+    background-color: white;
+    /* border-radius: 2rem; */
     margin-bottom: 1rem;
-    box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.1); */
 }
 
 .contactSection input,
@@ -29,7 +29,7 @@
 
 .contactSection input:focus,
 .contactSection textarea:focus {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--black);
     outline: none;
 }
 
@@ -78,10 +78,6 @@
     justify-content: center;
 }
 
-.buttonWrapper button {
-    background-color: var(--secondary-color);
-    border: 1px solid white;
-}
 
 .form {
     padding-top: 1rem;
