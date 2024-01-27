@@ -3,21 +3,22 @@
     flex-direction: row;
     overflow-x: scroll;
     gap: 2rem;
-    padding: 3rem 0;
+    padding: 3rem var(--sidePadding);
     margin-bottom: 2rem;
     border-radius: 2rem;
 
 }
 
-
 .reviewSection {
     /* background-color: #2a4f6e3d; */
-    padding: 3rem 0 2rem 1rem;
+    padding: 3rem 0 2rem 0;
     min-height: auto;
 }
 
 .reviewSection h2 {
     text-align: center;
+    padding-right: var(--sidePadding);
+    padding-left: var(--sidePadding);
 }
 
 

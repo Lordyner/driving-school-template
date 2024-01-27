@@ -130,6 +130,11 @@
     .imgWrapper {
         position: relative;
         display: flex;
+        padding-left: var(--sidePadding);
+    }
+
+    .imgWrapper.fromRight {
+        padding-right: var(--sidePadding);
     }
 
     .imgWrapper img {

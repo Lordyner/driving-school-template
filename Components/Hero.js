@@ -30,7 +30,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className={classes.imgWrapper}>
-                {(!isMobileResolution && !isTabletResolution) && <>
+                {/* {(!isMobileResolution && !isTabletResolution) && <>
                     <div className={classes.successRateRectangle}>
                         <svg className={classes.svgCircleProgress} width="7.5rem" height="7.5rem" viewBox="-20.75 -20.75 207.5 207.5" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <circle r="73" cx="83" cy="83" fill="transparent" stroke="#FAEAE9" strokeWidth="18" strokeDasharray="458.44px" strokeDashoffset="0"></circle>
@@ -47,7 +47,7 @@ const Hero = () => {
                             </g>
                         </svg>
                     </div>
-                </>}
+                </>} */}
                 <Image src={instructorAndStudent} alt='moniteur et son élève tenant la clé de la voiture' className={classes.heroImg} />
             </div >
         </section >

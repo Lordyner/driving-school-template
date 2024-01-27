@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: var(--topAndBotPadding) var(--sidePadding);
     text-align: center;
     min-height: auto;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .heroContentAndCTA {
@@ -21,12 +23,11 @@
     flex-direction: column;
 }
 
-.callToActionWrapper button {}
 
 .heroImg {
     width: 100%;
     object-fit: cover;
-    max-height: 40vh;
+    max-height: 35vh;
 }
 
 .imgWrapper {
@@ -35,6 +36,49 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+    .heroContainer {
+        flex-direction: row;
+        flex-grow: 2;
+        padding-top: 0;
+        padding-bottom: 2.5rem;
+        gap: 1.5rem;
+        justify-content: flex-start;
+    }
+
+    .semiBold {
+        font-family: IBMSemiBold;
+    }
+
+
+    .heroContentAndCTA {
+        align-items: flex-start;
+        min-width: 50%;
+    }
+
+    .imgWrapper {
+        min-width: 50%;
+    }
+
+    .heroContainer h1 {
+        text-align: left;
+        min-width: fit-content;
+    }
+
+    .callToActionWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 100%;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 3rem;
+    }
+
+    .heroImg {
+        width: 100%;
+        object-fit: cover;
+        max-height: 57vh;
+    }
 
     .imgWrapper {
         position: relative;
@@ -80,48 +124,6 @@
 
     .successRateRectangle text {
         transform: rotate(90deg) translate(0px, -161px);
-    }
-
-
-    .semiBold {
-        font-family: IBMSemiBold;
-    }
-
-    .heroContainer {
-        flex-direction: row;
-        flex-grow: 2;
-        padding: 0 4rem 2.5rem 4rem;
-        gap: 1.5rem;
-
-    }
-
-    .heroContentAndCTA {
-        align-items: flex-start;
-        min-width: 50%;
-    }
-
-    .imgWrapper {
-        min-width: 50%;
-    }
-
-    .heroContainer h1 {
-        text-align: left;
-        min-width: fit-content;
-    }
-
-    .callToActionWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-width: 100%;
-        align-items: center;
-        gap: 1rem;
-        padding-top: 3rem;
-    }
-
-    .heroImg {
-        width: 100%;
-        object-fit: cover;
-        max-height: 57vh;
     }
 }
 

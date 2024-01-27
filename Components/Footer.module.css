@@ -1,7 +1,7 @@
 .footer {
     background-color: #F0F0F0;
     color: var(--black);
-    padding: 2rem var(--sidePadding);
+    padding: var(--topAndBotPadding) var(--sidePadding);
     font-size: var(--body-400);
 }
 
@@ -14,7 +14,7 @@
 .valueProposition {
     display: grid;
     align-items: center;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: auto 1fr;
     gap: .75rem;
 
 }
