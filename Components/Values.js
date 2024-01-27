@@ -3,7 +3,7 @@ import classes from './Values.module.css';
 import Image from 'next/image';
 import studentDriving from '@/public/images/student_driving.png';
 import showingKeyStudent from '@/public/images/instruction_and_student_in_a_car_showing_key.png';
-import drivingExam from '@/public/images/driving_exam.png';
+import drivingExam from '@/public/images/driving_exam.PNG';
 import GlobalContext from '@/Store/GlobalContext';
 const Values = () => {
 
