@@ -80,17 +80,19 @@
 }
 
 @media screen and (min-width: 768px) {
+
     .container {
-        display: grid;
-        grid-template-columns: 30% 70%;
-        column-gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .imageAndNameContainer {
         display: flex;
         flex-direction: column;
-        gap: .5rem;
-        align-items: flex-start;
+        gap: .75rem;
+
+        align-items: center;
     }
 
     .valueProposition {
@@ -102,21 +104,12 @@
 
     .linkContainer {
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        gap: 3rem;
     }
 
     .topLinks {
-        display: flex;
-        border-bottom: 2px solid var(--lightGrey);
-        padding-bottom: 1rem;
-    }
-
-    .classicLinks {
-        display: flex;
-        flex-direction: row;
-        gap: 2.5rem;
-
+        border-bottom: none;
     }
 
     .socialLinks {
@@ -130,11 +123,6 @@
         font-size: 2rem;
     }
 
-    .imageAndNameContainer {
-        display: flex;
-        align-items: center;
-        gap: .75rem;
-    }
 
     .logo {
         width: 6rem;
@@ -142,52 +130,8 @@
     }
 
 
-
     .classicLinks {
         flex-direction: column;
     }
 
-    .linkContainer {
-        flex-direction: row;
-        gap: 3rem;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .topLinks {
-        border-bottom: none;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-
-    .logo {
-        width: 6rem;
-        height: 6rem;
-    }
-
-
-
-    .classicLinks {
-        flex-direction: column;
-    }
-
-    .linkContainer {
-        flex-direction: row;
-        gap: 3rem;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .topLinks {
-        border-bottom: none;
-    }
 }
