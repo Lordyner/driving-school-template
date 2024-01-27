@@ -1,9 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import classes from './Hero.module.css';
 import Image from 'next/image';
-import heroImg from '@/public/images/hero_image.png';
 import instructorAndStudent from '@/public/images/driving-instructor-with-student-and-key.png';
-import mobileHeroImg from '@/public/images/hero_image_mobile.png';
 import GlobalContext from '@/Store/GlobalContext';
 
 
@@ -50,7 +48,6 @@ const Hero = () => {
                         </svg>
                     </div>
                 </>}
-                {/* <Image src={mobileHeroImg} alt='moniteur et son élève dans une voiture en train de réviser' className={classes.heroImg} /> */}
                 <Image src={instructorAndStudent} alt='moniteur et son élève tenant la clé de la voiture' className={classes.heroImg} />
             </div >
         </section >

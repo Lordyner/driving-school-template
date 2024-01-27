@@ -158,6 +158,18 @@ body {
 
 .align-items-end {
     align-items: flex-end;
+}
+
+.justify-self-start {
+    justify-self: flex-start;
+}
+
+.bottom-minus-2 {
+    bottom: -2rem;
+}
+
+.top-minus-2 {
+    top: -2rem;
 
 }
 
