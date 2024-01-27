@@ -37,3 +37,21 @@
     border-radius: .5rem;
     background-color: #A0A0A0;
 }
+
+@media screen and (min-width: 1440px) {
+    .reviews {
+        display: grid;
+        grid-template-areas:
+            "review1 review2"
+            "review3 review2";
+        overflow-x: hidden;
+        justify-items: center;
+        padding-top: 6rem;
+    }
+
+    .reviewSection {
+        padding: 3rem 0 6rem 0;
+
+    }
+
+}

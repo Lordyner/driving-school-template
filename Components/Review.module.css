@@ -9,6 +9,7 @@
     padding: 1rem;
     min-width: 60%;
     box-shadow: 19px 16px 8px -7px rgba(0, 0, 0, 0.1);
+    font-size: var(--body-400);
 }
 
 .review:nth-child(even) {
@@ -25,4 +26,36 @@
     display: flex;
     justify-content: flex-end;
     color: #FABB05;
+}
+
+@media screen and (min-width: 1024px) {
+    .review {
+        padding: 2rem;
+        min-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .review {
+        padding: 2rem;
+        max-width: 80%;
+    }
+
+    .review:nth-child(1) {
+        grid-area: review1;
+        background-color: var(--tertiary-color);
+    }
+
+    .review:nth-child(2) {
+        grid-area: review2;
+        align-self: center;
+        background-color: var(--secondary-color);
+
+    }
+
+    .review:nth-child(3) {
+        grid-area: review3;
+        background-color: var(--tertiary-color);
+
+    }
 }

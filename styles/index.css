@@ -185,6 +185,14 @@ body {
     padding-bottom: 1rem;
 }
 
+.pl-1 {
+    padding-left: 1rem;
+}
+
+.pr-1 {
+    padding-right: 1rem;
+}
+
 .gap-1 {
     gap: 1rem;
 }
@@ -291,6 +299,10 @@ h3 {
     font-size: var(--heading-500);
     color: var(--black);
     font-weight: 600;
+}
+
+p {
+    font-size: var(--body-400);
 }
 
 .wrapperLeftAndRight {
@@ -463,6 +475,11 @@ button:focus-visible {
     align-items: flex-end;
     gap: .5em;
     text-decoration: underline;
+}
+
+.secondary-button.black {
+    background-color: var(--black);
+    color: #fff;
 }
 
 .secondary-button.withIcon {

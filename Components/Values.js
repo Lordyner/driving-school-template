@@ -14,7 +14,7 @@ const Values = () => {
             <div className={classes.value}>
                 <div className={`${classes.valueContent} ${classes.fromLeft} ${classes.secondaryColor}`}>
                     {(isLaptopResolution || isDesktopResolution) &&
-                        <div className={classes.imgWrapper}><Image src={studentDriving} alt='élève dans la voiture avec son moniteur' className={`${classes.valueImg} bottom-minus-2`} /></div>
+                        <div className={`${classes.imgWrapper} pl-1`}><Image src={studentDriving} alt='élève dans la voiture avec son moniteur' className={`${classes.valueImg} bottom-minus-2`} /></div>
                     }
                     <div className={classes.valueText}>
                         <h2>+ 20 ans d&apos;expérience</h2>
@@ -69,14 +69,14 @@ const Values = () => {
                             </div>}
                     </div>
                     {(isLaptopResolution || isDesktopResolution) &&
-                        <div className={classes.imgWrapper}><Image src={showingKeyStudent} alt='élève dans la voiture avec son moniteur' className={`${classes.valueImg} top-minus-2`} /></div>
+                        <div className={`${classes.imgWrapper} pr-1`}><Image src={showingKeyStudent} alt='élève dans la voiture avec son moniteur' className={`${classes.valueImg} top-minus-2`} /></div>
                     }
                 </div>
             </div>
             <div className={classes.value}>
                 <div className={`${classes.valueContent} ${classes.fromLeft} ${classes.primaryColor}`}>
                     {(isLaptopResolution || isDesktopResolution) &&
-                        <div className={classes.imgWrapper}><Image src={drivingExam} alt='élève dans la voiture avec son moniteur' className={`${classes.valueImg} top-minus-2`} /></div>
+                        <div className={`${classes.imgWrapper} pl-1`}><Image src={drivingExam} alt='élève dans la voiture avec son moniteur' className={`${classes.valueImg} top-minus-2`} /></div>
                     }
                     <div className={classes.valueText}>
                         <h2>+ 20 ans d&apos;expérience</h2>

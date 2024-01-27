@@ -87,15 +87,74 @@ export async function getStaticProps(context) {
   let fetchedReviews = null;
   let response = null;
 
-  try {
-    response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&key=${process.env.PLACE_API_KEY}&language=fr`);
-    const data = await response.json();
-    fetchedReviews = data.result.reviews;
-    logger.info("Reviews fetched successfully");
-  } catch (error) {
-    logger.error("Error while fetching reviews : " + JSON.stringify(error));
-  }
-  let mockedReviews = []
+  // try {
+  //   response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&key=${process.env.PLACE_API_KEY}&language=fr`);
+  //   const data = await response.json();
+  //   fetchedReviews = data.result.reviews;
+  //   logger.info("Reviews fetched successfully : " + JSON.stringify(fetchedReviews));
+  // } catch (error) {
+  //   logger.error("Error while fetching reviews : " + JSON.stringify(error));
+  // }
+  let mockedReviews = [
+    {
+      "author_name": "Fatouma Wankoye",
+      "author_url": "https://www.google.com/maps/contrib/109931931571146739390/reviews",
+      "language": "fr",
+      "original_language": "fr",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIulWgjCiZqQI-jJMG-S0dd5BIB9pEsJsTAJmY2eFUt=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "il y a 3 mois",
+      "text": "Excellente auto-├®cole ! Mes heures de conduite ce sont tr├¿s bien pass├®s, les moniteurs sont ├á votre ├®coute, ils vous rassurent et vous soutiennent.nTr├¿s belle exp├®rience.",
+      "time": 1697983434, "translated": false
+    },
+    {
+      "author_name": "el houssine Hanyn",
+      "author_url": "https://www.google.com/maps/contrib/109838405056524115833/reviews",
+      "language": "fr",
+      "original_language": "fr",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIozHmLzhJKt7qRzZnjAVKflmrXQfaVPUxnCKlbkxPQ=s128-c0x00000000-cc-rp-mo-ba2",
+      "rating": 5,
+      "relative_time_description": "il y a moins d'une semaine",
+      "text": "Excellente auto ├®cole j'ai pass├® mon permis acc├®l├®r├® rapidement moniteur tr├¿s p├®dagogue, appliqu├®e et tr├¿s professionnel gr├óce a sa je l'ai eu du premier coup sans merci encore",
+      "time": 1705942136,
+      "translated": false
+    },
+    {
+      "author_name": "marieloue Leforestier",
+      "author_url": "https://www.google.com/maps/contrib/105331045337264701275/reviews",
+      "language": "fr",
+      "original_language": "fr",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKjDyH5cAQzufZxt9KSm6RhUCalTcT9uln9b246F26n=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "il y a 5┬ámois",
+      "text": "Auto ├®cole que je recommande, lÔÇÖ├®quipe est au top, le moniteur nous apprend dans la p├®dagogie et la bienveillance. Nos heures sont bien plac├®s et lÔÇÖ├®quipe a tout fait pour que je r├®ussisse mon permis ­ƒñØ­ƒÅ╝­ƒÿî merci ├á eux ! ­ƒ½Â­ƒÅ¢",
+      "time": 1690974529,
+      "translated": false
+    },
+    {
+      "author_name": "Constant. C",
+      "author_url": "https://www.google.com/maps/contrib/100289779129696010013/reviews",
+      "language": "fr",
+      "original_language": "fr",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUUxaoQNGgnBLo7DtSSLv09LFVfwdgqxvsV9RoFGoNtQB7U=s128-c0x00000000-cc-rp-mo-ba3",
+      "rating": 5,
+      "relative_time_description": "il y a 3┬ámois",
+      "text": "Super Auto-├®cole !nJe suis arriv├®e l├á-bas apr├¿s 28h de conduite, beaucoup de mauvais reflexe ├á cause dÔÇÖun mauvais moniteur et un essai rat├® pour lÔÇÖexamen du permis mais en 12h de conduite, ils ont su me redonner confiance, enlever une grosse partie de mes mauvais r├®flexes et jÔÇÖai d├®sormais le permis grace aux deux montieurs.nEncore merci infiniment !",
+      "time": 1697958167,
+      "translated": false
+    },
+    {
+      "author_name": "kenza vonck",
+      "author_url": "https://www.google.com/maps/contrib/106533615458208430434/reviews",
+      "language": "fr",
+      "original_language": "fr",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocK-144hQnj6xZ2tUdwYYUQzmH-YyR9-u6kHUcGzwFx7=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "il y a 3┬ámois",
+      "text": "Parfait, Marvin est un tr├¿s bon moniteur il nous apprend vite et nous met rapidement en confiance.nL'auto-├®cole est arrangeante pour les horaires ...nJe recommande ├á 100 pourcent",
+      "time": 1697877590,
+      "translated": false
+    }]
   return {
     props: {
       reviews: mockedReviews,
