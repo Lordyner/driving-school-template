@@ -1,5 +1,10 @@
 .navbar {
     display: flex;
+    flex-direction: column
+}
+
+.navWrapper {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
@@ -9,12 +14,19 @@
 }
 
 a.link {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    color: #ddd;
+    color: var(--black);
     font-size: var(--heading-400);
+}
+
+.separator {
+    border-bottom: 1px solid #f0f0f0;
+    width: 95%;
+    align-self: center;
 }
 
 .navLink {
@@ -22,9 +34,24 @@ a.link {
     gap: 2rem;
 }
 
-.link:hover {
-    color: #fff;
+
+.link::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all .5s;
+
 }
+
+.link:hover::before {
+    width: 100%;
+
+}
+
 
 .title {
     color: #000000;
@@ -137,7 +164,7 @@ a.link {
     opacity: .8;
 }
 
-.profilImg {
+.logoImg {
     border-radius: 90px;
     width: 50px;
     height: 50px;
@@ -173,9 +200,6 @@ a.link {
 }
 
 @media (min-width: 768px) {
-    .navbar {
-        padding: 2rem 2.5rem;
-    }
 
     .hamburger {
         display: none;
@@ -184,7 +208,24 @@ a.link {
 
 @media (min-width: 1024px) {
 
+
     .navLink {
         gap: 4rem;
+    }
+
+    .navWrapper {
+        padding: 2rem 4rem 3rem 4rem;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .logoImg {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .navWrapper {
+        padding: 3rem 6rem 3rem 6rem;
     }
 }

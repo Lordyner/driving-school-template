@@ -95,10 +95,10 @@ export async function getStaticProps(context) {
   } catch (error) {
     logger.error("Error while fetching reviews : " + JSON.stringify(error));
   }
-
+  let mockedReviews = []
   return {
     props: {
-      reviews: fetchedReviews,
+      reviews: mockedReviews,
     },
     // Revalidate data every day
     revalidate: 86400,

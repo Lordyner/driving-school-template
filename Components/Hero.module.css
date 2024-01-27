@@ -7,8 +7,15 @@
     min-height: auto;
 }
 
+.heroContentAndCTA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .callToActionWrapper {
-    padding-top: 3rem;
+    padding-top: 2rem;
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -18,11 +25,161 @@
 
 .heroImg {
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     max-height: 40vh;
 }
 
 .imgWrapper {
     max-width: 100%;
     padding-top: .5rem;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .imgWrapper {
+        position: relative;
+    }
+
+    .imgWrapper svg {
+        width: 5rem;
+        height: 5rem;
+    }
+
+
+    .successRateRectangle,
+    .nbSuccessRectangle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        max-width: 11rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .successRateRectangle {
+        background: var(--secondary-color);
+        right: 0rem;
+        bottom: 0rem;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .nbSuccessRectangle {
+        background: var(--tertiary-color);
+        left: 0rem;
+        bottom: 0rem;
+        box-shadow: 12px -10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .successRateRectangle svg {
+        transform: rotate(-90deg);
+    }
+
+    .successRateRectangle text {
+        transform: rotate(90deg) translate(0px, -161px);
+    }
+
+
+    .semiBold {
+        font-family: IBMSemiBold;
+    }
+
+    .heroContainer {
+        flex-direction: row;
+        flex-grow: 2;
+        padding: 0 4rem 2.5rem 4rem;
+        gap: 1.5rem;
+
+    }
+
+    .heroContentAndCTA {
+        align-items: flex-start;
+        min-width: 50%;
+    }
+
+    .imgWrapper {
+        min-width: 50%;
+    }
+
+    .heroContainer h1 {
+        text-align: left;
+        min-width: fit-content;
+    }
+
+    .callToActionWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 100%;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 3rem;
+    }
+
+    .heroImg {
+        width: 100%;
+        object-fit: cover;
+        max-height: 57vh;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+
+    .successRateRectangle,
+    .nbSuccessRectangle {
+        max-width: 13rem;
+
+    }
+
+    .heroImg {
+        max-height: 82vh;
+    }
+
+    .heroContainer {
+        padding: 0 6rem 2.5rem 6rem;
+        gap: 3rem;
+
+    }
+
+    .callToActionWrapper {
+        padding-top: 4rem;
+    }
+
+    .imgWrapper svg {
+        width: 7rem;
+        height: 7rem;
+    }
+
+
+    .successRateRectangle,
+    .nbSuccessRectangle {
+
+        font-size: 1.25rem;
+
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+
+    .callToActionWrapper {
+        padding-top: 5rem;
+    }
+
+    .successRateRectangle {
+        background: var(--secondary-color);
+        right: 2rem;
+        bottom: 0rem;
+
+    }
+
+    .nbSuccessRectangle {
+        background: var(--tertiary-color);
+        left: 3rem;
+        bottom: 0rem;
+    }
+
 }
