@@ -26,6 +26,8 @@
     --body-500: 1rem;
     --body-400: 1rem;
     --body-100: 1rem;
+
+    --sidePadding: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -48,6 +50,9 @@
         --heading-400: 1.25rem;
         --body-500: 1.5rem;
         --body-400: 1.5rem;
+
+        --sidePadding: 4rem;
+
     }
 }
 
@@ -59,12 +64,17 @@
         --heading-400: 1.5rem;
         --body-500: 2rem;
         --body-400: 1.5rem;
+
+        --sidePadding: 6rem;
+
     }
 }
 
 @media screen and (min-width: 1800px) {
     :root {
         --heading-900: 6rem;
+
+        --sidePadding: 6rem;
     }
 }
 

@@ -1,7 +1,7 @@
 .footer {
     background-color: #F0F0F0;
     color: var(--black);
-    padding: 2rem;
+    padding: 2rem var(--sidePadding);
     font-size: var(--body-400);
 }
 
@@ -34,10 +34,10 @@
     gap: 1rem;
 }
 
-.profilImg {
+.logo {
     border-radius: 90px;
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     transition: 0.1s ease-in-out;
 }
 
@@ -86,14 +86,19 @@
         column-gap: 1rem;
     }
 
-    .valueProposition {
+    .imageAndNameContainer {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        gap: .5rem;
         align-items: flex-start;
-        gap: .75rem;
-
     }
+
+    .valueProposition {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
 
     .linkContainer {
         display: flex;
@@ -129,5 +134,60 @@
         display: flex;
         align-items: center;
         gap: .75rem;
+    }
+
+    .logo {
+        width: 6rem;
+        height: 6rem;
+    }
+
+
+
+    .classicLinks {
+        flex-direction: column;
+    }
+
+    .linkContainer {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .topLinks {
+        border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .logo {
+        width: 6rem;
+        height: 6rem;
+    }
+
+
+
+    .classicLinks {
+        flex-direction: column;
+    }
+
+    .linkContainer {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .topLinks {
+        border-bottom: none;
     }
 }

@@ -15,7 +15,7 @@ const Footer = () => {
                 {isMobileResolution &&
                     <div className={classes.valueProposition}>
 
-                        <Image src={logoTemplate} alt='logo auto-école' className={classes.profilImg} width={50} height={50} />
+                        <Image src={logoTemplate} alt='logo auto-école' className={classes.logo} width={50} height={50} />
                         <div>
                             <h2>Nom auto-école</h2>
                             <p>Value proposition auto-école</p>
@@ -26,11 +26,13 @@ const Footer = () => {
                 }
                 {!isMobileResolution &&
                     <div className={classes.valueProposition}>
+                        <Image src={logoTemplate} alt='logo auto-école' className={classes.logo} width={50} height={50} />
                         <div className={classes.imageAndNameContainer}>
-                            <Image src={logoTemplate} alt='logo auto-école' className={classes.profilImg} width={50} height={50} />
-                            <h2>Thomas André-Lubin</h2>
+                            <h2>Nom auto-école</h2>
+                            <p>Value proposition auto-école</p>
+                            <p>10 avenue des champs-élysée</p>
+                            <p>02 41 75 95 96</p>
                         </div>
-                        <p>Développement de site web sur mesure.</p>
                     </div>
                 }
                 {isMobileResolution && <div className={classes.separator}></div>}
@@ -53,7 +55,6 @@ const Footer = () => {
                             <Link href="/#home">Lien 8</Link>
                             <Link href="/#home">Lien 9</Link>
                             <Link href="/#home">Lien 10</Link>
-
                         </div>
                     </div>
                     <div className={classes.socialLinks}>
