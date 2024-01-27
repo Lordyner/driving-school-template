@@ -27,10 +27,8 @@ const Reviews = ({ reviews }) => {
                     <Review review={reviews[2]} /></>
                 }
 
-
             </div>}
             <div className='d-flex justify-content-center'>
-
                 <button className='secondary-button black'>Voir plus d&apos;avis</button>
             </div>
         </section>
