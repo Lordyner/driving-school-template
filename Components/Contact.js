@@ -5,7 +5,7 @@ import GlobalContext from '@/Store/GlobalContext';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Contact = ({ mapImage }) => {
+const Contact = () => {
     const logger = getLogger('Contact');
 
     const form = useRef();

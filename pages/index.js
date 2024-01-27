@@ -77,7 +77,7 @@ export default function Home({ reviews, mapBase64 }) {
       <Values />
       <Reviews reviews={reviews} />
       <CTAReminder />
-      <Contact mapImage={mapBase64} />
+      <Contact />
     </>
   )
 }
@@ -88,8 +88,6 @@ export async function getStaticProps(context) {
   logger.info('Method fetching reviews and map');
   let fetchedReviews = null;
   let response = null;
-  let imageBytes = null;
-  let imageBase64 = null;
   // try {
   //   response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&key=${process.env.PLACE_API_KEY}&language=fr`);
   //   const data = await response.json();
@@ -159,28 +157,9 @@ export async function getStaticProps(context) {
       "translated": false
     }]
 
-
-  // Fetch map bloc from google map static API
-  try {
-    let center = "accès auto-école, montpellier";
-    let size = "1000x1000";
-
-    // Call google map static API
-    let response = await fetch(`https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=15&size=${size}&markers=%7Ccolor:red%7CAccès+Autoécole,Montpellier&key=${process.env.MAP_STATIC_API_KEY}`);
-    // Retrieve response to google map static API
-    imageBytes = await response.arrayBuffer();
-
-    // Convertir le tableau d'octets en base64
-    imageBase64 = Buffer.from(imageBytes).toString("base64");
-    console.log()
-  } catch (error) {
-    logger.error("Error while fetching map : " + error);
-  }
-
   return {
     props: {
-      mapBase64: `data:image/png;base64,${imageBase64}`,
-      reviews: mockedReviews,
+      reviews: mockedReviews
     },
     // Revalidate data every day
     revalidate: 86400,
